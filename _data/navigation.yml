@@ -2,8 +2,8 @@
 main:
   - title: "Classes"
     url: /classes/
-  - title: "Publications"
-    url: /publications/
+  - title: "Writing"
+    url: /writing/
   - title: "Presentations"
     url: /presentations/
   # - title: "Sample Collections"

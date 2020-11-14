@@ -3,11 +3,11 @@ main:
   - title: "Home"
     url: https://wgabrielong.github.io/home
   - title: "Classes"
-    url: https://wgabrielong.github.io/classes
+    url: /classes/
   - title: "Research"
-    url: https://mmistakes.github.io/research
+    url: /research/
   - title: "Presentations"
-    url: https://wgabrielong.github.io/presentations
+    url: /presentations/
   # - title: "Sample Collections"
   #   url: /collection-archive/
   # - title: "Sitemap"

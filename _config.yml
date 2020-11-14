@@ -104,6 +104,9 @@ author:
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
       url: "https://github.com/wgabrielong"
+    - label: "ORCiD"
+      icon: "fab fa-orcid"
+      url: "https://orcid.org/0000-0002-4955-5205"
 
 # Site Footer
 footer:
@@ -114,6 +117,9 @@ footer:
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
       url: "https://github.com/wgabrielong"
+    - label: "ORCiD"
+      icon: "fab fa-orcid"
+      url: "https://orcid.org/0000-0002-4955-5205"
 
 
 # Reading Files

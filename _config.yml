@@ -24,7 +24,7 @@ description              : "Gabriel Ong's Personal Website"
 url                      : "wgabrielong.github.io"
 baseurl                  : # "/home"
 repository               : "wgabrielong/wgabrielong.github.io"
-teaser                   : "/assets/images/LL2.jpg"
+teaser                   : #"/assets/images/LL2.jpg"
 logo                     : # path of logo image to display in the masthead, e.g. "/assets/images/88x88.png"
 masthead_title           : "wgabrielong"
 # breadcrumbs            : false # true, false (default)

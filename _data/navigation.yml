@@ -1,11 +1,13 @@
 # main links
 main:
-  - title: "Quick-Start Guide"
-    url: https://mmistakes.github.io/minimal-mistakes/docs/quick-start-guide/
-  # - title: "About"
-  #   url: https://mmistakes.github.io/minimal-mistakes/about/
-  # - title: "Sample Posts"
-  #   url: /year-archive/
+  - title: "Home"
+    url: https://wgabrielong.github.io/home
+  - title: "Classes"
+    url: https://wgabrielong.github.io/classes
+  - title: "Research"
+    url: https://mmistakes.github.io/research
+  - title: "Presentations"
+    url: https://wgabrielong.github.io/presentations
   # - title: "Sample Collections"
   #   url: /collection-archive/
   # - title: "Sitemap"

@@ -1,7 +1,7 @@
 # main links
 main:
   - title: "Home"
-    url: https://wgabrielong.github.io/home
+    url: /home/
   - title: "Classes"
     url: /classes/
   - title: "Research"

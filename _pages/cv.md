@@ -6,18 +6,5 @@ author_profile: true
 redirect_from:
   - /resume
 ---
-
-{% include base_path %}
-
-Education
-======
-* A.B. in Mathematics & Minor in Greek, Bowdoin College 2024
-
-Research Experience
-======
-* May 2022 to August 2022: Emmy Noether Group, Max Planck Institute for Mathematics in the Sciences -- Leipzig, Germany
-
-* June 2021 to August 2021: The Xena Project, Imperial College London -- London, United Kingdom
-
-* May 2020 to June 2021: Karanicolas Lab, Fox Chase Cancer Center/Temple Medical School -- Philadelphia, PA
-  
+I am a sophomore [mathematics major](https://www.bowdoin.edu/math/) with a [Greek minor](https://www.bowdoin.edu/classics/) at [Bowdoin College](https://www.bowdoin.edu/). Before Bowdoin, I went to high school in Kuala Lumpur where I graduated from [Mont' Kiara International School](https://www.mkis.edu.my/) in 2019. I spent the 2020-2021 academic year on leave from Bowdoin during which I conducted research at the [Karanicolas Lab](https://www.karanicolaslab.org/) of the Fox Chase Cancer Center developing machine learning tools for drug discovery. During this time I was also a visiting student at [Columbia University](https://www.columbia.edu/) in the [Mathematics Department](https://www.math.columbia.edu/). In June 2021, I started as an independent contributor at the Xena Project at Imperial College London and worked on the formalization of mathematics in the Lean theorem prover. This coming summer, I will be going to the [Max Planck Institute for Mathematics in the Sciences](https://www.mis.mpg.de/) in Leipzig as a visiting researcher in the [Emmy Noether Group - Numerical and Probabalistic Nonlinear Algera](https://www.mis.mpg.de/breiding/index.html) to work on a project at the interface of computer vision and algeraic geometry. In my spare time I enjoy reading philosophical texts, especially thse from the ancient, medieval, and continental traditions. <br/><br/>
+My short vita is availible [here](https://www.overleaf.com/read/yfynrngymjhf) and my full CV availible on request. 

@@ -13,7 +13,7 @@ Education
 ======
 * A.B. in Mathematics & Minor in Greek, Bowdoin College 2024
 
-Work experience
+Research Experience
 ======
 * May 2022 to August 2022: Emmy Noether Group, Max Planck Institute for Mathematics in the Sciences -- Leipzig, Germany
 

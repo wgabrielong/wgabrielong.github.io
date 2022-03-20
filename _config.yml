@@ -85,8 +85,8 @@ author:
   bio              : "Student at Bowdoin College"
   location         : "Brunswick, Maine"
   employer         :
-  pubmed           : "https://scholar.google.com/citations?user=QP_lwTAAAAAJ&hl=en"
-  googlescholar    : "http://yourfullgooglescholarurl.com"
+  pubmed           : 
+  googlescholar    : "https://scholar.google.com/citations?user=QP_lwTAAAAAJ&hl=en"
   email            :
   researchgate     :  # example: "https://www.researchgate.net/profile/yourprofile"
   uri              :

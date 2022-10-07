@@ -7,4 +7,4 @@ redirect_from:
   - /about/
   - /about.html
 ---
-Welcome to my website. I am a sophomore at Bowdoin interested in mathematics. Feel free to peruse and don't hesitate to reach out. 
+I am a junior mathematics major and Greek minor at Bowdoin College. My mathematical interests primarily lie in algebra and algebraic geometry, in particular its interactions with combinatorics and applications of computational techniques to such problems.  

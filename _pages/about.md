@@ -13,4 +13,4 @@ redirect_from:
 <blockquote>
   For geometrical knowing is of what is always. (<i> Republic, 527b </i>)
 </blockquote>
-I am a junior mathematics major and Greek minor at Bowdoin College. My mathematical interests primarily lie in algebraic geometry, broadly construed. Right now I am interested in the application of "modern" techniques (eg. computation) to "classical" problems. In a previous life, I worked on problems in computational drug discovery. 
+I am a junior mathematics major and Greek minor at Bowdoin College. My mathematical interests primarily lie in algebraic geometry, broadly construed. Right now I am interested in the application of "modern" techniques (eg. computation, motivic homotopy theory) to "classical" problems. In a previous life, I worked on problems in computational drug discovery. 

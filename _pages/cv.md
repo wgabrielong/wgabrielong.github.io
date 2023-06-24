@@ -18,6 +18,6 @@ This coming summer, I will be based at the [University of Massachusetts - Amhers
 
 This coming fall, I will be a visiting student at [Harvard University](https://www.harvard.edu/).<br/>
 
-In my spare time I enjoy reading texts in Ancient Greeek, especially philosophy and tragic theater. <br/>
+In my spare time I enjoy reading texts in Ancient Greek, especially philosophy and tragic theater. <br/>
 
 A public version of my vita is availible [here](https://wgabrielong.github.io/files/Wern_Juin_Gabriel_Ong___CV__Public_.pdf) and my full vita is available on request. 

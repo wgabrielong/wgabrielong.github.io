@@ -14,8 +14,6 @@ I spent the 2020-2021 academic year on leave from Bowdoin during which I conduct
 
 I spent summer 2022 at the [Max Planck Institute for Mathematics in the Sciences](https://www.mis.mpg.de/) in Leipzig as a visiting researcher in the [Emmy Noether Group - Numerical and Probabalistic Nonlinear Algera](https://www.mis.mpg.de/breiding/index.html) where I worked on a project at the interface of enumarative and real algebraic geometry. <br/>
 
-This coming summer, I will be based at the [University of Massachusetts - Amherst](https://www.umass.edu/mathematics-statistics/) working on a research project in algebraic geometry under the supervision of [Jenia Tevelev](https://people.math.umass.edu/~tevelev/). <br/>
-
 This coming fall, I will be a visiting student at [Harvard University](https://www.harvard.edu/).<br/>
 
 In my spare time I enjoy reading texts in Ancient Greek, especially philosophy and tragic theater. <br/>

@@ -6,6 +6,7 @@ author_profile: true
 redirect_from:
   - /resume
 ---
+<h2> A Short Bio </h2>
 I am a senior [mathematics major](https://www.bowdoin.edu/math/) and a [Greek minor](https://www.bowdoin.edu/classics/) at [Bowdoin College](https://www.bowdoin.edu/). <br/>
 
 Before Bowdoin, I went to high school in Kuala Lumpur where I graduated from [Mont' Kiara International School](https://www.mkis.edu.my/) in 2019. <br/>
@@ -16,6 +17,12 @@ I spent summer 2022 at the [Max Planck Institute for Mathematics in the Sciences
 
 This coming fall, I will be a visiting student at [Harvard University](https://www.harvard.edu/).<br/>
 
+A public version of my vita is availible [here](https://wgabrielong.github.io/files/Wern_Juin_Gabriel_Ong___CV__Public_.pdf) and my full vita is available on request. <br/><br/>
+
+<h2> Fun Facts </h2>
+
 In my spare time I enjoy reading texts in Ancient Greek, especially philosophy and tragic theater. <br/>
 
-A public version of my vita is availible [here](https://wgabrielong.github.io/files/Wern_Juin_Gabriel_Ong___CV__Public_.pdf) and my full vita is available on request. 
+If I was a Springer Graduate Text in Mathematics, I would be Saunders Mac Lane's <i>Categories for the Working Mathematician</i>. Find out what Springer Graduate Text in Mathematics you are at the following [link](https://math.jhu.edu/~savitt/GTM.html).
+
+ 

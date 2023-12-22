@@ -15,7 +15,7 @@ I spent the 2020-2021 academic year on leave from Bowdoin during which I conduct
 
 I spent summer 2022 at the [Max Planck Institute for Mathematics in the Sciences](https://www.mis.mpg.de/) in Leipzig as a visiting researcher in the [Emmy Noether Group - Numerical and Probabalistic Nonlinear Algera](https://www.mis.mpg.de/breiding/index.html) where I worked on a project at the interface of enumerative and real algebraic geometry. More recently, I have been thinking about using machine learning to better understand structures in algebraic geometry, as well as about $\mathbb{A}^{1}$ enumerative geometry. <br/>
 
-This fall, I am a visiting student at [Harvard University](https://www.harvard.edu/).<br/>
+This past fall, I was a visiting student at [Harvard University](https://www.harvard.edu/).<br/>
 
 A public version of my vita is available [here](https://wgabrielong.github.io/files/Wern_Juin_Gabriel_Ong___CV__Public_.pdf) and my full vita is available on request. <br/><br/>
 

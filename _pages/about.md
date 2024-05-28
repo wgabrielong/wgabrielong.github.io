@@ -8,14 +8,12 @@ redirect_from:
   - /about.html
 ---
 <blockquote>
-  τοῦ γὰρ ἀεὶ ὄντος ἡ γεωμετρικὴ γνῶσίς ἐστιν. (Πολιτεία, 527b)
+  But when we note that mathematics has the manner ofbeing ofa lively forward movement from acquisitions as premises to new     
+  acquisitions, in whose ontic meaning that of the premises is included (the process continuing in this manner), then it is clear that 
+  the total meaning of geometry (as a developed science, as in the case of every science) could not have been present as a project and 
+  then as mobile fulfillment at the beginning. (E. Husserl, <i> The Origin of Geometry </i>)
 </blockquote>
-<blockquote>
-  For geometrical knowing is of what is always. (<i> Republic, 527b </i>)
-</blockquote>
-I am a senior mathematics major and Greek minor at Bowdoin College. My mathematical interests primarily lie in algebraic geometry, broadly construed. Right now I am interested in the application of modern techniques from both pure and applied mathematics to classical problems. I believe the synthesis of the ancient and modern exemplifies the grandeur of mathematics as a long conversation.<sup>1</sup>
+I am a 2024 graduate of Bowdoin College and an incoming mathematics Master's student at The University of Bonn. My mathematical interests primarily lie in algebraic geometry, in particular within categorical and algebro-topological methods. 
 <br/><br/>
 
-In a previous life, I worked on problems in computational drug discovery. <br/><br/>
-
-<sup>1</sup> "Mathematics is a long conversation" is a quote often attributed to Barry Mazur.
+In a previous life, I worked on problems in computational drug discovery. 

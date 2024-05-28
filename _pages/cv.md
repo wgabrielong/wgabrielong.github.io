@@ -7,7 +7,7 @@ redirect_from:
   - /resume
 ---
 <h2> A Longer Bio </h2>
-I am an incoming [Mathematics Master's student](https://www.mathematics.uni-bonn.de/studium/en) at [The University of Bonn](https://www.uni-bonn.de/en). 
+I am an incoming [Mathematics Master's student](https://www.mathematics.uni-bonn.de/studium/en) at [The University of Bonn](https://www.uni-bonn.de/en). <br/>
 
 I recently graduated [Bowdoin College](https://www.bowdoin.edu/) where I [majored in mathematics](https://www.bowdoin.edu/math/) and [minored in Ancient Greek](https://www.bowdoin.edu/classics/). During the course of my undergraduate education, I spent the 2020-2021 academic year on leave from Bowdoin where I conducted research at the [Karanicolas Lab](https://www.karanicolaslab.org/) of the [Fox Chase Cancer Center](https://www.foxchase.org/) developing machine learning tools for drug discovery. During this time I was also a visiting student at [Columbia University](https://www.columbia.edu/) in the [Mathematics Department](https://www.math.columbia.edu/). I spent summer 2021 as an independent contributor at [The Xena Project](https://xenaproject.wordpress.com/) of the [Imperial College London](https://www.imperial.ac.uk/) and worked on the formalization of mathematics in the Lean theorem prover, writing proofs for the [MathLib](https://leanprover-community.github.io/mathlib-overview.html) .  <br/>
 

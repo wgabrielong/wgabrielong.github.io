@@ -8,7 +8,7 @@ redirect_from:
   - /about.html
 ---
 <blockquote>
-  But when we note that mathematics has the manner ofbeing ofa lively forward movement from acquisitions as premises to new     
+  But when we note that mathematics has the manner ofbeing of a lively forward movement from acquisitions as premises to new     
   acquisitions, in whose ontic meaning that of the premises is included (the process continuing in this manner), then it is clear that 
   the total meaning of geometry (as a developed science, as in the case of every science) could not have been present as a project and 
   then as mobile fulfillment at the beginning. (E. Husserl, <i> The Origin of Geometry </i>)

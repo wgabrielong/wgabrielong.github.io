@@ -13,7 +13,7 @@ redirect_from:
   the total meaning of geometry (as a developed science, as in the case of every science) could not have been present as a project and 
   then as mobile fulfillment at the beginning. (E. Husserl, <i> The Origin of Geometry </i>)
 </blockquote>
-I am a 2024 graduate of Bowdoin College and an incoming mathematics Master's student at The University of Bonn. My mathematical interests primarily lie in algebraic geometry, in particular within categorical and algebro-topological methods. 
+I am a 2024 graduate of Bowdoin College and an incoming mathematics Master's student at The University of Bonn. My mathematical interests primarily lie in algebraic geometry, in particular within categorical and algebro-topological methods. I also spend time thinking about nonlinear algebra and mathematical software. 
 <br/><br/>
 
 In a previous life, I worked on problems in computational drug discovery. 

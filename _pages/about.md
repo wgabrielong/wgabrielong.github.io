@@ -14,7 +14,7 @@ redirect_from:
   then as mobile fulfillment at the beginning. 
   - E. Husserl, <i> The Origin of Geometry </i>
 </blockquote>
-I am a current Master's student at the University of Bonn and a 2024 graduate of Bowdoin College. My mathematical interests primarily lie in algebraic geometry, in particular within categorical and algebro-topological methods. I also spend time thinking about nonlinear algebra and mathematical software. 
+I am a current Master's student at the University of Bonn and a 2024 graduate of Bowdoin College. My mathematical interests lie in algebraic and arithmetic geometry. I also spend time thinking about computation in algebraic and arithmetic geometry as well as homotopy theory. 
 <br/><br/>
 
 In a previous life, I worked on problems in computational drug discovery. 

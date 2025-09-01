@@ -24,4 +24,4 @@ I am a current Master's student at the University of Bonn and a 2024 graduate of
 In a previous life, I worked on problems in computational drug discovery. 
 
 <h3>About My Name</h3>
-I am from Malaysia and of Chinese descent. My full name is <b>Wern Juin Gabriel Ong</b>, where <b>Ong</b> is my family (last) name and <b>Wern Juin Gabriel</b> are my given (first) names. I go by <b>Gabriel Ong</b> in most contexts and, if addressing me personally by first name, <b>Gabriel</b> or <b>Gabe</b> are both appropriate. I publish under my full name.
+I am Malaysian and of Chinese descent. My full name is <b>Wern Juin Gabriel Ong</b>, where <b>Ong</b> is my family (last) name and <b>Wern Juin Gabriel</b> are my given (first) names. I go by <b>Gabriel Ong</b> in most contexts and, if addressing me personally by first name, <b>Gabriel</b> or <b>Gabe</b> are both appropriate. I publish under my full name.

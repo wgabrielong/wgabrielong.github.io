@@ -18,7 +18,7 @@ redirect_from:
   </blockquote>
   <p>—E. Husserl, <cite>The Origin of Geometry </cite></p>
 </div>
-I am a current Master's student at the University of Bonn and a 2024 graduate of Bowdoin College. My mathematical interests lie in higher approaches to algebraic and arithmetic geometry and its interactions with homotopy theory. I am currently working on my master's thesis, developing a theory of solid geometry (in the sense of Clausen-Scholze's condensed mathematics) over structured ring spectra. I also spend time thinking about (effective) machine computations of invariants that arise in my areas of interest. 
+I am a current Master's student at the University of Bonn and a 2024 graduate of Bowdoin College. My mathematical interests lie in higher approaches to algebraic and arithmetic geometry and its interactions with homotopy theory. I am currently working on my master's thesis on condensed mathematics, where I am seeking to develop a theory of solid quasicoherent sheaves in spectral algebraic geometry. I also spend time thinking about (effective) machine computations of structures in arithmetic-algebraic geometry and homotopy theory.  
 <br/><br/>
 
 In a previous life, I worked on problems in computational drug discovery. 

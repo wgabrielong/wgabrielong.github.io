@@ -15,17 +15,18 @@ structure and design.
 This repo is the **website**: layout, styling, and the structured content
 (publications, notes, talks, activities, bios) that the pages render.
 
-The **PDFs** it links to — typeset lecture notes, the CV, talk slides — are
-compiled from LaTeX in a **separate `academic-writing` repo**, not here. The
-intended pipeline is: that repo compiles the TeX, and the resulting PDFs are
-dropped into this site's `public/` tree at build time so Astro serves them at
-paths like `/notes/bonn-winter-25-26/.../Notes.pdf`.
+**The CV is built here.** `cv-src/main.tex` is compiled by the deploy workflow
+with Tectonic into `public/cv/main.pdf`, so the live site serves it at
+`/cv/main.pdf` (see [Build & deploy status](#build--deploy-status)).
 
-**That cross-repo wiring is not built yet.** Today the `pdfPath` / link fields
-in the content point at those *future* locations, so many PDF links currently
-404. That is expected — the metadata is real, the files are pending migration.
-The one PDF path already proven end-to-end is the CV (`cv-src/` → `/cv/main.pdf`
-via Tectonic; see [Build & deploy status](#build--deploy-status)).
+**Typeset notes live elsewhere.** Lecture and seminar notes are written and
+compiled in a separate **`academic-writing`** repo, which is already built and
+published at `wgabrielong.github.io/academic-writing/`. Notes entries here link
+straight to those PDFs by **full URL** (e.g.
+`https://wgabrielong.github.io/academic-writing/notes/.../Notes.pdf`) — this
+repo neither hosts nor compiles them. Migrating older notes into
+`academic-writing` is an ongoing, gradual process, so not everything is listed
+yet; entries get added here as their PDFs go up.
 
 ---
 
@@ -249,27 +250,31 @@ Rules of thumb:
 
 ## Build & deploy status
 
-**Local only — nothing auto-deploys yet.**
+**Live — the site auto-deploys to GitHub Pages from `main`.**
 
-- `npm run build` produces the full static site in `dist/`.
-- `.github/workflows/build.yml` is a **proof-of-build** workflow (triggers on
-  push to `rebuild` and manual dispatch): it installs **Tectonic** via
-  `wtfjoke/setup-tectonic`, compiles `cv-src/main.tex` to `public/cv/main.pdf`,
-  runs `npm ci` + `astro build`, and uploads `dist/` as an artifact.
-- It **does not deploy to Pages** — intentionally. The repo's Pages source still
-  points at the old site's branch and hasn't been cut over. The workflow only
-  proves the CV-compile + site-build chain works end to end.
+- `.github/workflows/build.yml` ("Build & Deploy") runs on every push to `main`
+  (and manual dispatch): it installs **Tectonic** via `wtfjoke/setup-tectonic`,
+  compiles `cv-src/main.tex` to `public/cv/main.pdf`, runs `npm ci` +
+  `astro build`, then deploys `dist/` to Pages via
+  `actions/upload-pages-artifact` + `actions/deploy-pages`.
+- Pages **Source** is set to **GitHub Actions** and `main` is the default
+  branch, so pushing to `main` rebuilds and redeploys `wgabrielong.github.io`.
+- `npm run build` still produces the full static site in `dist/` for local
+  checks.
 
-So the CV-PDF-from-TeX approach is proven; the broader academic-writing → PDF
-pipeline and the Pages deploy step are still to be wired up.
+Not yet wired: a **PR-validation CI check** (build + schema check on pull
+requests) — see the note in the next section.
 
 ---
 
 ## Editing content via GitHub's web interface
 
-Once the site is deployed, **this is the intended primary way to make content
+Now that the site is live, **this is the intended primary way to make content
 edits** (updating a publication, adding a talk, fixing a note's metadata).
 Larger structural changes are done through Claude Code.
+
+Because a push to `main` deploys immediately, prefer the PR flow below until the
+build/schema PR check exists — a malformed frontmatter would otherwise go live.
 
 1. Navigate to the file on GitHub — e.g. `src/content/talks/…yaml`.
 2. Click the **pencil (✏️) icon** to edit in the browser.

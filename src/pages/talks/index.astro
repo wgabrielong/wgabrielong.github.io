@@ -9,12 +9,12 @@ const typeLabels: Record<string, string> = {
   talk: 'Talk',
 };
 
-// Extract a year for recency ranking. Handles academic-year spans
-// ("Winter 2024/25" -> ending year 2025), single years ("July 2024"), and
-// multi-date strings (takes the most recent year).
+// Extract the year for recency ranking — the year decides whether a talk shows
+// by default or sits behind the "earlier talks" toggle. The `date` field is
+// free-form (a month, a month + day, or a semester); we just take the latest
+// 4-digit year present. For a semester like "Winter 2024/25" that's the
+// starting year (2024), since the "/25" is two digits.
 function yearOf(date: string): number {
-  const span = date.match(/(\d{4})\/(\d{2})/);
-  if (span) return Number(span[1].slice(0, 2) + span[2]);
   const years = [...date.matchAll(/\d{4}/g)].map((m) => Number(m[0]));
   return years.length ? Math.max(...years) : 0;
 }

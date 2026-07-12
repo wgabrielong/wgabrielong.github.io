@@ -1,0 +1,46 @@
+title: 'Efficient Hit-to-Lead Searching of Kinase Inhibitor Chemical Space via Computational Fragment Merging'
+venue: 'Journal of Chemical Information and Modeling, Vol. 61, No. 12'
+status: published
+byline: 'with Grigorii V. Andrianov, Ilya Serebriiskii, and John Karanicolas'
+abstract: >-
+  In early stage drug discovery, the stage of hit-to-lead optimization
+  (or "hit expansion") entails starting from a newly-identified active
+  compound, and improving its potency or other properties. Traditionally
+  this process relies on synthesizing and evaluating a series of analogs
+  to build up structure-activity relationships. Here, we describe a
+  computational strategy focused on kinase inhibitors, intended to
+  expedite the process of identifying analogs with improved potency. Our
+  protocol begins from an inhibitor of the target kinase, and
+  generalizes the synthetic route used to access it. By searching for
+  commercially-available replacements for the individual building
+  blocks used to make the parent inhibitor, we compile an enumerated
+  library of compounds that can be accessed using the same chemical
+  transformations; these huge libraries can exceed many millions – or
+  billions – of compounds. Because the resulting libraries are much too
+  large for explicit virtual screening, we instead consider alternate
+  approaches to identify the top-scoring compounds. We find that
+  contributions from individual substituents are well-described by a
+  pairwise additivity approximation, provided that the corresponding
+  fragments position their shared core in precisely the same way
+  relative to the binding site. This key insight allows us to determine
+  which fragments are suitable for merging into a single new compounds,
+  and which are not. Further, the use of the pairwise approximation
+  allows interaction energies to be assigned to each compound in the
+  library, without the need for any further structure-based modeling:
+  interaction energies instead can be reliably estimated from the
+  energies of the component fragments. We demonstrate this protocol
+  using libraries built from five representative kinase inhibitors drawn
+  from the literature, which target four different kinases: CDK9, CHK1,
+  CDK2, and ACK1. In each example, the enumerated library includes
+  additional analogs reported by the original study to have activity,
+  and these analogs are successfully prioritized within the library. We
+  envision that the insights from this work can facilitate the rapid
+  assembly and screening of increasingly large libraries for focused
+  hit-to-lead optimization. To encourage adoption of these methods and
+  enable further analyses, we disseminate the computational tools
+  needed to deploy this protocol.
+links:
+  - label: Journal
+    url: 'https://doi.org/10.1021/acs.jcim.1c00630'
+  - label: bioRxiv
+    url: 'https://www.biorxiv.org/content/10.1101/2021.06.01.446684v1'

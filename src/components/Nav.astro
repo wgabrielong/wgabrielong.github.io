@@ -1,0 +1,152 @@
+---
+const links = [
+  { label: 'About', href: '/' },
+  { label: 'Research', href: '/research' },
+  { label: 'Talks', href: '/talks' },
+  { label: 'Notes', href: '/notes' },
+  { label: 'Blog', href: 'https://wgabrielong.substack.com', external: true },
+  { label: 'CV', href: '/cv' },
+  { label: 'Activities', href: '/activities' },
+];
+
+// Normalise the current path (drop trailing slash except for root) so the
+// active link is highlighted regardless of how Astro serves the route.
+const raw = Astro.url.pathname;
+const current = raw !== '/' && raw.endsWith('/') ? raw.slice(0, -1) : raw;
+
+function isActive(href: string, external?: boolean) {
+  if (external) return false;
+  if (href === '/') return current === '/';
+  return current === href || current.startsWith(href + '/');
+}
+---
+
+<header class="site-header">
+  <nav class="site-nav container" aria-label="Primary">
+    <!-- A logo mark can sit as a first child here, before the wordmark. -->
+    <a class="brand" href="/">
+      <span class="wordmark">Wern Juin Gabriel Ong</span>
+    </a>
+    <ul class="nav-links">
+      {
+        links.map((link) => (
+          <li>
+            <a
+              href={link.href}
+              class:list={['nav-link', { active: isActive(link.href, link.external) }]}
+              aria-current={isActive(link.href, link.external) ? 'page' : undefined}
+              {...link.external ? { target: '_blank', rel: 'noopener noreferrer' } : {}}
+            >
+              {link.label}
+              {link.external && (
+                <svg
+                  class="ext-icon"
+                  aria-hidden="true"
+                  width="10"
+                  height="10"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="M7 17 17 7" />
+                  <path d="M8 7h9v9" />
+                </svg>
+              )}
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </nav>
+</header>
+
+<style>
+  .site-header {
+    border-bottom: 1px solid var(--color-border);
+    background-color: var(--color-bg);
+  }
+
+  .site-nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    padding-block: 1.1rem;
+  }
+
+  .brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--color-heading);
+  }
+
+  .brand:hover {
+    color: var(--color-heading);
+    text-decoration: none;
+  }
+
+  /* Modest wordmark — present but not dominating the header.
+     Keeps the full name on one line so it never breaks mid-name;
+     the nav row as a whole wraps instead (see .site-nav). */
+  .wordmark {
+    font-weight: 600;
+    font-size: 0.98rem;
+    letter-spacing: var(--tracking-heading);
+    white-space: nowrap;
+  }
+
+  .nav-links {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1.35rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .nav-links li {
+    margin: 0;
+  }
+
+  .nav-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.2rem;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--color-muted);
+    transition: color 0.15s ease;
+  }
+
+  .nav-link:hover {
+    color: var(--color-accent);
+    text-decoration: none;
+  }
+
+  .nav-link.active {
+    color: var(--color-heading);
+  }
+
+  .ext-icon {
+    opacity: 0.55;
+    margin-bottom: 1px;
+  }
+
+  @media (max-width: 34rem) {
+    .site-nav {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.85rem;
+    }
+
+    .nav-links {
+      gap: 1rem 1.1rem;
+    }
+  }
+</style>

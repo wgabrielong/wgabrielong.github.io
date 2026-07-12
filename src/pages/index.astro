@@ -1,0 +1,65 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<!-- No `title` prop: the homepage <title> is the bare site name, "Gabriel Ong". -->
+<BaseLayout
+  description="Wern Juin Gabriel Ong — Master’s student in mathematics at the University of Bonn, working on condensed mathematics and higher categorical approaches to algebraic and arithmetic geometry."
+>
+  <section class="hero">
+    <h1>Wern Juin Gabriel Ong</h1>
+    <p class="role">Master’s Student · University of Bonn</p>
+  </section>
+
+  <section class="bio">
+    <p>
+      I’m a Master’s student at the University of Bonn and a 2024 graduate of
+      Bowdoin College. My interests lie in higher categorical approaches to
+      algebraic and arithmetic geometry, and their interactions with homotopy
+      theory.
+    </p>
+    <p>
+      My thesis develops a theory of solid quasicoherent sheaves in spectral
+      algebraic geometry, extending ideas from condensed mathematics. I also
+      think about effective machine computation of the structures that arise in
+      these areas.
+    </p>
+    <p>
+      In a previous life, I worked on problems in computational drug discovery.
+    </p>
+  </section>
+
+  <section class="name">
+    <h2>About My Name</h2>
+    <p>
+      I am Malaysian and of Chinese descent. My full name is
+      <strong>Wern Juin Gabriel Ong</strong>, where <strong>Ong</strong> is my
+      family (last) name and <strong>Wern Juin Gabriel</strong> are my given
+      (first) names. I go by <strong>Gabriel Ong</strong> in most contexts and,
+      if addressing me personally by first name, <strong>Gabriel</strong> or
+      <strong>Gabe</strong> are both appropriate. I publish under my full name.
+    </p>
+  </section>
+</BaseLayout>
+
+<style>
+  .hero {
+    margin-bottom: 2rem;
+  }
+
+  .hero h1 {
+    margin-bottom: 0.35rem;
+  }
+
+  .role {
+    margin: 0;
+    font-size: 1.05rem;
+    font-weight: 500;
+    color: var(--color-accent);
+    letter-spacing: var(--tracking-heading);
+  }
+
+  .bio {
+    max-width: 40rem;
+  }
+</style>

@@ -1,0 +1,35 @@
+/* ============================================================
+   KaTeX overrides — match the site's type and color
+   Imported after katex.min.css so these win.
+   ============================================================ */
+
+/* Inline math sits in body text — inherit color, keep it from
+   inflating line-height. */
+.katex {
+  font-size: 1.04em;
+  color: var(--color-body);
+}
+
+/* Display equations: generous vertical rhythm, horizontal scroll
+   on overflow rather than breaking the layout. */
+.katex-display {
+  margin: 1.75rem 0;
+  padding: 0.25rem 0;
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
+.katex-display > .katex {
+  color: var(--color-heading);
+  white-space: nowrap;
+}
+
+/* Thin scrollbar for overflowing display math. */
+.katex-display::-webkit-scrollbar {
+  height: 6px;
+}
+
+.katex-display::-webkit-scrollbar-thumb {
+  background: var(--color-border);
+  border-radius: 3px;
+}

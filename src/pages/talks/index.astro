@@ -1,0 +1,213 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { renderInlineMath } from '../../utils/math';
+
+const typeLabels: Record<string, string> = {
+  slides: 'Talk',
+  poster: 'Poster',
+  talk: 'Talk',
+};
+
+// Extract a year for recency ranking. Handles academic-year spans
+// ("Winter 2024/25" -> ending year 2025), single years ("July 2024"), and
+// multi-date strings (takes the most recent year).
+function yearOf(date: string): number {
+  const span = date.match(/(\d{4})\/(\d{2})/);
+  if (span) return Number(span[1].slice(0, 2) + span[2]);
+  const years = [...date.matchAll(/\d{4}/g)].map((m) => Number(m[0]));
+  return years.length ? Math.max(...years) : 0;
+}
+
+const talks = (await getCollection('talks')).sort(
+  (a, b) => yearOf(b.data.date) - yearOf(a.data.date) || a.id.localeCompare(b.id),
+);
+
+// Default view: current + previous year. Older talks collapse behind a toggle.
+// "Current year" is the build year, not a hardcoded value.
+const currentYear = new Date().getFullYear();
+const recentCutoff = currentYear - 1;
+
+const recentTalks = talks.filter((t) => yearOf(t.data.date) >= recentCutoff);
+const earlierTalks = talks.filter((t) => yearOf(t.data.date) < recentCutoff);
+---
+
+<BaseLayout
+  title="Talks"
+  description="Talks and seminars presented by Wern Juin Gabriel Ong."
+>
+  <h1>Talks</h1>
+  <p class="intro">Talks and seminars I have presented.</p>
+
+  <ul class="talk-list">
+    {
+      recentTalks.map((talk) => (
+        <li class="talk">
+          <h2 class="talk-title" set:html={renderInlineMath(talk.data.title)} />
+          <p class="talk-venue">{talk.data.venue}</p>
+          <p class="talk-meta">
+            <span class="talk-date">{talk.data.date}</span>
+            <span class="talk-type">{typeLabels[talk.data.type]}</span>
+            {talk.data.links.map((link) => (
+              <a href={link.url} target="_blank" rel="noopener noreferrer">
+                {link.label}
+              </a>
+            ))}
+          </p>
+        </li>
+      ))
+    }
+  </ul>
+
+  {
+    earlierTalks.length > 0 && (
+      <details class="earlier">
+        <summary>
+          <span class="earlier-label">Show earlier talks</span>
+          <svg
+            class="chevron"
+            aria-hidden="true"
+            width="14"
+            height="14"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2.25"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path d="m6 9 6 6 6-6" />
+          </svg>
+        </summary>
+        <ul class="talk-list earlier-content">
+          {earlierTalks.map((talk) => (
+            <li class="talk">
+              <h2 class="talk-title" set:html={renderInlineMath(talk.data.title)} />
+              <p class="talk-venue">{talk.data.venue}</p>
+              <p class="talk-meta">
+                <span class="talk-date">{talk.data.date}</span>
+                <span class="talk-type">{typeLabels[talk.data.type]}</span>
+                {talk.data.links.map((link) => (
+                  <a href={link.url} target="_blank" rel="noopener noreferrer">
+                    {link.label}
+                  </a>
+                ))}
+              </p>
+            </li>
+          ))}
+        </ul>
+      </details>
+    )
+  }
+</BaseLayout>
+
+<style>
+  h1 {
+    margin-bottom: 0.5rem;
+  }
+
+  .intro {
+    margin: 0 0 2.5rem;
+    color: var(--color-muted);
+    max-width: 40rem;
+  }
+
+  .talk-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .talk {
+    padding: 1.35rem 0;
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .talk-list:first-of-type .talk:first-child {
+    padding-top: 0;
+  }
+
+  .talk:last-child {
+    border-bottom: none;
+  }
+
+  .talk-title {
+    font-size: 1.08rem;
+    font-weight: 600;
+    line-height: 1.4;
+    margin: 0 0 0.35rem;
+  }
+
+  .talk-venue {
+    margin: 0 0 0.5rem;
+    font-size: 0.95rem;
+    color: var(--color-body);
+  }
+
+  .talk-meta {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.5rem 0.9rem;
+    margin: 0;
+    font-size: 0.88rem;
+  }
+
+  .talk-date {
+    color: var(--color-muted);
+  }
+
+  .talk-type {
+    font-size: 0.76rem;
+    font-weight: 500;
+    color: var(--color-muted);
+    padding: 0.1rem 0.5rem;
+    border: 1px solid var(--color-border);
+    border-radius: 999px;
+  }
+
+  .talk-meta a {
+    font-weight: 500;
+  }
+
+  /* "Show earlier talks" toggle — same treatment as the Activities page. */
+  .earlier {
+    margin-top: 1rem;
+  }
+
+  .earlier summary {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    cursor: pointer;
+    list-style: none;
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: var(--color-accent);
+    padding: 0.35rem 0;
+    width: max-content;
+  }
+
+  .earlier summary::-webkit-details-marker {
+    display: none;
+  }
+  .earlier summary::marker {
+    content: '';
+  }
+
+  .earlier summary:hover {
+    color: var(--color-accent-hover);
+  }
+
+  .chevron {
+    transition: transform 0.18s ease;
+  }
+
+  .earlier[open] .chevron {
+    transform: rotate(180deg);
+  }
+
+  .earlier-content {
+    margin-top: 1.5rem;
+  }
+</style>

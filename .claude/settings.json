@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm --version)",
+      "Bash(git -C /Users/gabrielong/Desktop/wgabrielong.github.io status)"
+    ]
+  }
+}

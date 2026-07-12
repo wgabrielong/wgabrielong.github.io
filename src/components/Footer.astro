@@ -1,0 +1,74 @@
+---
+const year = new Date().getFullYear();
+
+const socials = [
+  { label: 'Google Scholar', href: 'https://scholar.google.com/citations?user=QP_lwTAAAAAJ&hl=en' },
+  { label: 'ORCID', href: 'https://orcid.org/0000-0002-4955-5205' },
+  { label: 'GitHub', href: 'https://github.com/wgabrielong' },
+];
+---
+
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <ul class="footer-links">
+      {
+        socials.map((s) => (
+          <li>
+            <a
+              href={s.href}
+              {...s.href.startsWith('http') ? { target: '_blank', rel: 'noopener noreferrer' } : {}}
+            >
+              {s.label}
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+    <p class="footer-meta">© {year} Wern Juin Gabriel Ong</p>
+  </div>
+</footer>
+
+<style>
+  .site-footer {
+    border-top: 1px solid var(--color-border);
+    background-color: var(--color-bg);
+    padding-block: 1.75rem 2.25rem;
+    margin-top: 3rem;
+  }
+
+  .footer-inner {
+    display: flex;
+    flex-direction: column;
+    gap: 0.85rem;
+  }
+
+  .footer-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem 1.25rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .footer-links li {
+    margin: 0;
+  }
+
+  .footer-links a {
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--color-muted);
+  }
+
+  .footer-links a:hover {
+    color: var(--color-accent);
+    text-decoration: none;
+  }
+
+  .footer-meta {
+    margin: 0;
+    font-size: 0.82rem;
+    color: var(--color-muted);
+  }
+</style>

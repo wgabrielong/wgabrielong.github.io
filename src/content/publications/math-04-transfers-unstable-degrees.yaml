@@ -1,0 +1,9 @@
+title: 'Transfers and Unstable Degrees in the $\mathbb{A}^{1}$-Brouwer Degrees Package in Macaulay2'
+titlePlain: 'Transfers and Unstable Degrees in the 𝔸¹-Brouwer Degrees Package in Macaulay2'
+status: preprint
+byline: 'with Stephanie Atherton, Somak Dutta, Jordy Lopez Garcia, Joel Louwsma, Yuyuan Luo, and Ruzho Sagarayaj'
+abstract: >-
+  We describe a significant update to the Macaulay2 package A1BrouwerDegrees. We extend several methods in the previous version of the package to the setting of finite étale algebras, allowing the computation of transfers along finite étale extensions. Additionally, we implement a number of new features for the computation of unstable $\mathbb{A}^{1}$-Brouwer degrees and manipulation of classes in the unstable Grothendieck-Witt group.
+links:
+  - label: arXiv
+    url: 'https://doi.org/10.48550/arXiv.2511.12765'

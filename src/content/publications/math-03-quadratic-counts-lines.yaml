@@ -1,0 +1,11 @@
+title: 'Quadratic Counts of Lines Highly Tangent to Hypersurfaces'
+venue: 'Mathematische Nachrichten, Vol. 298, No. 11'
+status: published
+byline: 'with Stephen McKean and Giosuè Muratore'
+abstract: >-
+  We give two geometric interpretations for the local type of a line that is highly tangent to a hypersurface in a single point. One interpretation is phrased in terms of the Wronski map, while the other interpretation relates to the fundamental forms of the hypersurface. These local types are the local contributions of an quadratic form-valued Euler number that depends on a choice of orientation.
+links:
+  - label: Journal
+    url: 'https://doi.org/10.1002/mana.70048'
+  - label: arXiv
+    url: 'https://doi.org/10.48550/arXiv.2504.21664'

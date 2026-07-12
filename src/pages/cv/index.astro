@@ -1,0 +1,82 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { Content as CvBio } from '../../components/cv-bio.md';
+
+// Scaffolding: this file is produced later by the CV build pipeline
+// (cv-src/main.tex → /cv/main.pdf). The link works once it exists.
+const pdfPath = '/cv/main.pdf';
+---
+
+<BaseLayout
+  title="CV"
+  description="Curriculum vitae and longer biography of Wern Juin Gabriel Ong."
+>
+  <h1>Curriculum Vitae</h1>
+
+  <div class="cv-prose">
+    <CvBio />
+  </div>
+
+  <section class="cv-link-block">
+    <p class="cv-intro">A public copy of my CV is available as a PDF below.</p>
+    <a class="cv-link" href={pdfPath} target="_blank" rel="noopener noreferrer">
+      <svg
+        aria-hidden="true"
+        width="15"
+        height="15"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      >
+        <path d="M14 3h7v7" />
+        <path d="M10 14 21 3" />
+        <path d="M21 14v5a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5" />
+      </svg>
+      View CV (PDF)
+    </a>
+  </section>
+</BaseLayout>
+
+<style>
+  .cv-prose {
+    max-width: 40rem;
+  }
+
+  .cv-link-block {
+    margin-top: 2.75rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--color-border);
+  }
+
+  .cv-intro {
+    color: var(--color-muted);
+    max-width: 40rem;
+    margin: 0 0 1.25rem;
+  }
+
+  .cv-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    padding: 0.55rem 1rem;
+    border: 1px solid var(--color-accent);
+    border-radius: 6px;
+    font-size: 0.92rem;
+    font-weight: 500;
+    color: var(--color-accent);
+    background: rgba(0, 69, 142, 0.05);
+    transition:
+      background 0.15s ease,
+      color 0.15s ease;
+    white-space: nowrap;
+  }
+
+  .cv-link:hover {
+    background: var(--color-accent);
+    color: #fff;
+    text-decoration: none;
+  }
+</style>

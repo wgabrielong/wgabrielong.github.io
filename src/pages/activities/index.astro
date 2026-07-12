@@ -1,0 +1,128 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ActivityTerm from '../../components/ActivityTerm.astro';
+
+// Sort terms newest-first. Term strings look like "Fall 2026"; rank by year
+// then by season within the year (Spring < Summer < Fall < Winter).
+const seasonRank: Record<string, number> = {
+  Winter: 4,
+  Fall: 3,
+  Summer: 2,
+  Spring: 1,
+};
+
+function parseYear(term: string): number {
+  return Number(term.split(' ')[1]);
+}
+
+function termKey(term: string): number {
+  const [season, year] = term.split(' ');
+  return Number(year) * 10 + (seasonRank[season] ?? 0);
+}
+
+const terms = (await getCollection('activities')).sort(
+  (a, b) => termKey(b.data.term) - termKey(a.data.term),
+);
+
+// Default view: current year and the previous full year. Older terms go
+// behind a toggle. "Current year" is the build year, not a hardcoded value.
+const currentYear = new Date().getFullYear();
+const recentCutoff = currentYear - 1;
+
+const recentTerms = terms.filter((t) => parseYear(t.data.term) >= recentCutoff);
+const earlierTerms = terms.filter((t) => parseYear(t.data.term) < recentCutoff);
+---
+
+<BaseLayout
+  title="Activities"
+  description="Conferences, workshops, schools, and research visits attended by Wern Juin Gabriel Ong."
+>
+  <h1>Activities</h1>
+  <p class="intro">
+    Conferences, workshops, schools, and seminars I have attended or plan to attend.
+  </p>
+
+  {recentTerms.map((t) => <ActivityTerm term={t.data.term} entries={t.data.entries} />)}
+
+  {
+    earlierTerms.length > 0 && (
+      <details class="earlier">
+        <summary>
+          <span class="earlier-label">Show earlier activities</span>
+          <svg
+            class="chevron"
+            aria-hidden="true"
+            width="14"
+            height="14"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2.25"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path d="m6 9 6 6 6-6" />
+          </svg>
+        </summary>
+        <div class="earlier-content">
+          {earlierTerms.map((t) => (
+            <ActivityTerm term={t.data.term} entries={t.data.entries} />
+          ))}
+        </div>
+      </details>
+    )
+  }
+</BaseLayout>
+
+<style>
+  h1 {
+    margin-bottom: 0.5rem;
+  }
+
+  .intro {
+    margin: 0 0 2.5rem;
+    color: var(--color-muted);
+    max-width: 40rem;
+  }
+
+  .earlier {
+    margin-top: 1rem;
+  }
+
+  .earlier summary {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    cursor: pointer;
+    list-style: none;
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: var(--color-accent);
+    padding: 0.35rem 0;
+    width: max-content;
+  }
+
+  .earlier summary::-webkit-details-marker {
+    display: none;
+  }
+  .earlier summary::marker {
+    content: '';
+  }
+
+  .earlier summary:hover {
+    color: var(--color-accent-hover);
+  }
+
+  .chevron {
+    transition: transform 0.18s ease;
+  }
+
+  .earlier[open] .chevron {
+    transform: rotate(180deg);
+  }
+
+  .earlier-content {
+    margin-top: 1.75rem;
+  }
+</style>

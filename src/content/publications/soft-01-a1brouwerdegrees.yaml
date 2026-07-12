@@ -1,0 +1,9 @@
+title: 'A1BrouwerDegrees'
+venue: 'Macaulay2'
+status: published
+byline: 'with Stephanie Atherton, Nikita Borisov, Thomas Brazelton, Somak Dutta, Frenly Espino, Thomas Hagedorn, Zhaobo Han, Jordy Lopez Garcia, Joel Louwsma, Yuyuan Luo, Ruzho Sagarayaj, and Andrew Tawfeek'
+description: >-
+  For computations of (unstable) local and global $\mathbb{A}^{1}$-Brouwer degrees and arithmetic of (unstable) Grothendieck-Witt classes. 
+links:
+  - label: Documentation
+    url: 'https://macaulay2.com/doc/Macaulay2/share/doc/Macaulay2/A1BrouwerDegrees/html/index.html'

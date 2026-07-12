@@ -1,0 +1,253 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { renderInlineMath } from '../../utils/math';
+
+// Section is derived from each entry's filename prefix (e.g. `math-01-…`).
+// Filenames are numbered chronologically (01 = oldest); we display each
+// section newest-first, so sort by id descending.
+const publications = await getCollection('publications');
+
+// Display order of the sections.
+const sections = [
+  { key: 'math', label: 'Mathematics' },
+  { key: 'soft', label: 'Software' },
+  { key: 'bio', label: 'Computational Biology' },
+] as const;
+
+const grouped = sections
+  .map((section) => ({
+    ...section,
+    entries: publications
+      .filter((pub) => pub.id.split('-')[0] === section.key)
+      .sort((a, b) => b.id.localeCompare(a.id)),
+  }))
+  .filter((section) => section.entries.length > 0);
+---
+
+<BaseLayout
+  title="Research"
+  description="Publications by Wern Juin Gabriel Ong in mathematics and computational biology."
+>
+  <h1>Research</h1>
+
+  <p class="research-intro">
+    My research lies at the intersection of algebraic and arithmetic geometry,
+    higher category theory, and homotopy theory, with current work in condensed
+    mathematics. I’m also interested in effective computation, both here and, in
+    an earlier chapter, in computational biology.
+  </p>
+
+  {
+    grouped.map((section) => (
+      <section class="pub-section">
+        <h2 class="section-heading">{section.label}</h2>
+        <ul class="pub-list">
+          {section.entries.map((pub) => (
+            <li class="pub">
+              <h3
+                class="pub-title"
+                title={pub.data.titlePlain}
+                set:html={renderInlineMath(pub.data.title)}
+              />
+
+          <p class="pub-byline">{pub.data.byline}</p>
+
+          {pub.data.venue && (
+            <p class:list={['pub-venue', { mono: section.key === 'soft' }]}>
+              {pub.data.venue}
+            </p>
+          )}
+
+          {pub.data.description && (
+            <p class="pub-description" set:html={renderInlineMath(pub.data.description)} />
+          )}
+
+          {(pub.data.links.length > 0 || pub.data.pdfPath) && (
+            <p class="pub-links">
+              {pub.data.pdfPath && (
+                <a href={pub.data.pdfPath}>PDF</a>
+              )}
+              {pub.data.links.map((link) => (
+                <a href={link.url} target="_blank" rel="noopener noreferrer">
+                  {link.label}
+                </a>
+              ))}
+            </p>
+          )}
+
+          {pub.data.abstract && (
+            <details class="abstract">
+              <summary>
+                <span class="summary-label">Abstract</span>
+                <svg
+                  class="chevron"
+                  aria-hidden="true"
+                  width="14"
+                  height="14"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2.25"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="m6 9 6 6 6-6" />
+                </svg>
+              </summary>
+                  <p set:html={renderInlineMath(pub.data.abstract)} />
+                </details>
+              )}
+            </li>
+          ))}
+        </ul>
+      </section>
+    ))
+  }
+</BaseLayout>
+
+<style>
+  h1 {
+    margin-bottom: 0.75rem;
+  }
+
+  .research-intro {
+    margin: 0 0 2.5rem;
+    color: var(--color-body);
+    max-width: 40rem;
+  }
+
+  .pub-section {
+    margin-top: 2.75rem;
+  }
+
+  .pub-section:first-of-type {
+    margin-top: 0;
+  }
+
+  .section-heading {
+    margin: 0 0 1.1rem;
+    padding-bottom: 0.5rem;
+    font-size: 1.3rem;
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .pub-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .pub {
+    padding: 1.6rem 0;
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .pub:first-child {
+    padding-top: 0;
+  }
+
+  .pub:last-child {
+    border-bottom: none;
+  }
+
+  .pub-title {
+    font-size: 1.12rem;
+    font-weight: 600;
+    line-height: 1.4;
+    margin: 0 0 0.4rem;
+  }
+
+  .pub-byline {
+    margin: 0 0 0.5rem;
+    font-size: 0.95rem;
+    color: var(--color-body);
+  }
+
+  .pub-venue {
+    margin: 0 0 0.65rem;
+    font-size: 0.9rem;
+    color: var(--color-muted);
+    font-style: italic;
+  }
+
+  /* \texttt{} style for the software package "venue" (e.g. Macaulay2). */
+  .pub-venue.mono {
+    font-style: normal;
+    font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, 'Liberation Mono',
+      monospace;
+    font-size: 0.85rem;
+  }
+
+  /* Always-visible blurb (software entries), distinct from the abstract. */
+  .pub-description {
+    margin: 0 0 0.65rem;
+    font-size: 0.97rem;
+    color: var(--color-body);
+    max-width: 40rem;
+  }
+
+  .pub-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.35rem 1rem;
+    margin: 0;
+    font-size: 0.9rem;
+  }
+
+  .pub-links a {
+    font-weight: 500;
+  }
+
+  /* ---- Abstract dropdown ---- */
+  .abstract {
+    margin-top: 0.85rem;
+  }
+
+  .abstract summary {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+    cursor: pointer;
+    list-style: none; /* hide default marker */
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--color-muted);
+    transition: color 0.15s ease;
+    width: max-content;
+  }
+
+  /* Remove the native disclosure triangle across browsers. */
+  .abstract summary::-webkit-details-marker {
+    display: none;
+  }
+  .abstract summary::marker {
+    content: '';
+  }
+
+  .abstract summary:hover,
+  .abstract[open] summary {
+    color: var(--color-accent);
+  }
+
+  .chevron {
+    transition: transform 0.18s ease;
+  }
+
+  .abstract[open] .chevron {
+    transform: rotate(180deg);
+  }
+
+  .abstract > p {
+    margin: 0.7rem 0 0;
+    padding-left: 0.9rem;
+    border-left: 2px solid var(--color-border);
+    font-size: 0.97rem;
+    color: var(--color-body);
+    max-width: 40rem;
+  }
+
+  :focus-visible {
+    outline-offset: 4px;
+  }
+</style>

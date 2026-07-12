@@ -1,0 +1,256 @@
+# Academic activities, grouped by term, newest-first.
+# Each entry: dateRange, title (event name), institution (host/venue),
+# location ("City, ST, USA" | "City, Country" | "(Virtual)").
+# Date ranges are standardized: "Dth Month" or "Dth–Dth Month" (en-dash,
+# day before month, no year — the term heading carries the year).
+# Pre-2022 and both Spring 2022 entries are "(Virtual)" (attended remotely).
+
+- id: fall-2026
+  term: "Fall 2026"
+  entries:
+    - dateRange: "9th–13th November"
+      title: "Arithmetic Geometry and Higher Algebra: A conference on the occasion of Lars Hesselholt's 60th birthday"
+      institution: "University of Copenhagen"
+      location: "Copenhagen, Denmark"
+    - dateRange: "19th–23rd October"
+      title: "Motivic Homotopy Theory: Connections and Applications"
+      institution: "Simons Laufer Mathematical Sciences Institute (prev. MSRI)"
+      location: "Berkeley, CA, USA"
+    - dateRange: "October"
+      title: "Kleine AT: Manifold Calculus"
+      institution: "Bielefeld University"
+      location: "Bielefeld, Germany"
+    - dateRange: "14th–17th September"
+      title: "Non-Archimedean methods in arithmetic & tropical geometry (Annette Werner at 60) (Tentative)"
+      institution: "Goethe University Frankfurt am Main"
+      location: "Frankfurt am Main, Germany"
+
+- id: summer-2026
+  term: "Summer 2026"
+  entries:
+    - dateRange: "22nd–26th June"
+      title: "Machine Computation in Homotopy Theory"
+      institution: "Institute for Computational and Experimental Research in Mathematics (ICERM)"
+      location: "Providence, RI, USA"
+
+- id: spring-2026
+  term: "Spring 2026"
+  entries:
+    - dateRange: "10th April"
+      title: "Kleine AT"
+      institution: "University of Wuppertal"
+      location: "Wuppertal, Germany"
+    - dateRange: "18th–20th March"
+      title: "Recent Advances in Motivic Cohomology"
+      institution: "Osnabrück University"
+      location: "Osnabrück, Germany"
+    - dateRange: "23rd–27th February"
+      title: "OSCAR Coding Sprint"
+      institution: "Technical University of Berlin"
+      location: "Berlin, Germany"
+
+- id: fall-2025
+  term: "Fall 2025"
+  entries:
+    - dateRange: "26th–31st October"
+      title: "Computations in Stable Homotopy Theory"
+      institution: "American Institute of Mathematics"
+      location: "Pasadena, CA, USA"
+    - dateRange: "10th October"
+      title: "The Inaugural Kleine AT: Evenness via Spectral Sequences"
+      institution: "Max Planck Institute for Mathematics"
+      location: "Bonn, Germany"
+    - dateRange: "6th–9th October"
+      title: "Interactions Between Arithmetic Geometry and Global Analysis"
+      institution: "University of Regensburg"
+      location: "Regensburg, Germany"
+
+- id: summer-2025
+  term: "Summer 2025"
+  entries:
+    - dateRange: "30th June–4th July"
+      title: "Macaulay2 Workshop"
+      institution: "University of Wisconsin–Madison"
+      location: "Madison, WI, USA"
+    - dateRange: "9th–13th June"
+      title: "Arithmetic and Homotopy Theory"
+      institution: "University of Copenhagen"
+      location: "Copenhagen, Denmark"
+
+- id: spring-2025
+  term: "Spring 2025"
+  entries:
+    - dateRange: "31st March–4th April"
+      title: "Workshop on Lurie's Elliptic Cohomology"
+      institution: "University of Wuppertal"
+      location: "Wuppertal, Germany"
+    - dateRange: "13th–17th January"
+      title: "Algebraic Geometry: A Motivic View (In Honor of Marc Levine)"
+      institution: "ETH Zürich"
+      location: "Zürich, Switzerland"
+
+- id: fall-2024
+  term: "Fall 2024"
+  entries:
+    - dateRange: "11th–15th November"
+      title: "Unstable Homotopy Theory"
+      institution: "Max Planck Institute for Mathematics"
+      location: "Bonn, Germany"
+    - dateRange: "23rd–27th September"
+      title: "School on Hodge Theory and Shimura Varieties"
+      institution: "University of Duisburg-Essen"
+      location: "Essen, Germany"
+    - dateRange: "9th–13th September"
+      title: "Workshop on Dualisable Categories & Continuous K-Theory"
+      institution: "Max Planck Institute for Mathematics"
+      location: "Bonn, Germany"
+
+- id: summer-2024
+  term: "Summer 2024"
+  entries:
+    - dateRange: "3rd August"
+      title: "BM60: A Workshop for Bernard Mourrain's 60th Birthday"
+      institution: "Leipzig University"
+      location: "Leipzig, Germany"
+    - dateRange: "29th July–2nd August"
+      title: "MEGA - Effective Methods in Algebraic Geometry"
+      institution: "Max Planck Institute for Mathematics in the Sciences"
+      location: "Leipzig, Germany"
+    - dateRange: "7th–27th July"
+      title: "Park City Mathematics Institute Graduate Summer School (Motivic Homotopy)"
+      institution: "Prospector Conference Center, Park City, Utah"
+      location: "Park City, UT, USA"
+
+- id: spring-2024
+  term: "Spring 2024"
+  entries:
+    - dateRange: "2nd–7th January"
+      title: "Joint Mathematics Meetings 2024"
+      institution: "Moscone Center, San Francisco"
+      location: "San Francisco, CA, USA"
+
+- id: fall-2023
+  term: "Fall 2023"
+  entries:
+    - dateRange: "13th–15th October"
+      title: "Algebraic Geometry Northeastern Series (AGNES)"
+      institution: "University of Pennsylvania"
+      location: "Philadelphia, PA, USA"
+    - dateRange: "23rd September"
+      title: "Boston Algebraic Geometry Day"
+      institution: "Massachusetts Institute of Technology"
+      location: "Cambridge, MA, USA"
+
+- id: summer-2023
+  term: "Summer 2023"
+  entries:
+    - dateRange: "10th–12th July"
+      title: "SIAM Conference on Applied Algebraic Geometry"
+      institution: "Eindhoven University of Technology"
+      location: "Eindhoven, Netherlands"
+    - dateRange: "3rd–9th June"
+      title: "Macaulay2 Week (Workshop & Mini-School)"
+      institution: "University of Minnesota - Twin Cities"
+      location: "Minneapolis, MN, USA"
+
+- id: spring-2023
+  term: "Spring 2023"
+  entries:
+    - dateRange: "28th April–1st May"
+      title: "Algebraic Geometry Northeastern Series (AGNES)"
+      institution: "State University of New York - Stony Brook & Simons Center for Geometry and Physics"
+      location: "Stony Brook, NY, USA"
+    - dateRange: "4th–7th January"
+      title: "Joint Mathematics Meetings 2023"
+      institution: "Hynes Convention Center"
+      location: "Boston, MA, USA"
+    - dateRange: "2nd–3rd January"
+      title: "AMS Short Course: Polynomial Systems, Homotopy Continuation, and Applications"
+      institution: "Sheraton Boston"
+      location: "Boston, MA, USA"
+
+- id: fall-2022
+  term: "Fall 2022"
+  entries:
+    - dateRange: "18th–20th November"
+      title: "Algebraic Geometry Northeastern Series (AGNES)"
+      institution: "University of Massachusetts Amherst"
+      location: "Amherst, MA, USA"
+
+- id: summer-2022
+  term: "Summer 2022"
+  entries:
+    - dateRange: "9th August"
+      title: "Leipzig-Magdeburg Seminar Day"
+      institution: "Max Planck Institute for Mathematics in the Sciences"
+      location: "Leipzig, Germany"
+    - dateRange: "8th August"
+      title: "Workshop on Algebraic Geometry, Combinatorics, and Machine Learning"
+      institution: "Max Planck Institute for Mathematics in the Sciences"
+      location: "Leipzig, Germany"
+    - dateRange: "6th June–12th August"
+      title: "Nonlinear Algebra Group"
+      institution: "Max Planck Institute for Mathematics in the Sciences"
+      location: "Leipzig, Germany"
+    - dateRange: "30th May–3rd June"
+      title: "Tomas Pajdla's Research Group"
+      institution: "Czech Technical University in Prague"
+      location: "Prague, Czech Republic"
+
+- id: spring-2022
+  term: "Spring 2022"
+  entries:
+    - dateRange: "5th–9th March"
+      title: "Arizona Winter School on Arithmetic Geometry"
+      institution: "University of Arizona"
+      location: "Tucson, AZ, USA (Virtual)"
+    - dateRange: "20th–22nd January"
+      title: "Macaulay2 Polymake Workshop"
+      institution: "Technical University of Berlin"
+      location: "Berlin, Germany (Virtual)"
+
+- id: summer-2021
+  term: "Summer 2021"
+  entries:
+    - dateRange: "10th August"
+      title: "RosettaCon 2021"
+      location: "(Virtual)"
+    - dateRange: "29th–30th July"
+      title: "Workshop on Real Algebraic and Convex Geometry"
+      institution: "TU Braunschweig"
+      location: "Braunschweig, Germany (Virtual)"
+    - dateRange: "11th July"
+      title: "Undergraduate Mathematics Society Learning Seminar"
+      institution: "Columbia University"
+      location: "New York, NY, USA (Virtual)"
+    - dateRange: "5th–16th July"
+      title: "Minicourse on Convex Geometry"
+      institution: "Max Planck Institute for Mathematics in the Sciences"
+      location: "Leipzig, Germany (Virtual)"
+
+- id: spring-2021
+  term: "Spring 2021"
+  entries:
+    - dateRange: "16th March"
+      title: "Winter RosettaCon 2021"
+      location: "(Virtual)"
+
+- id: fall-2020
+  term: "Fall 2020"
+  entries:
+    - dateRange: "6th–12th December"
+      title: "Uncertainty Estimation and Robustness in Deep Learning"
+      institution: "NeurIPS 2020"
+      location: "(Virtual)"
+    - dateRange: "13th October"
+      title: "Research Day"
+      institution: "Fox Chase Cancer Center"
+      location: "Philadelphia, PA, USA (Virtual)"
+
+- id: summer-2020
+  term: "Summer 2020"
+  entries:
+    - dateRange: "12th–18th July"
+      title: "Bayesian Deep Learning Workshop"
+      institution: "ICML 2020"
+      location: "(Virtual)"

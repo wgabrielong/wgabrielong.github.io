@@ -1,0 +1,165 @@
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\usepackage{fancyhdr}
+\usepackage{amsfonts}
+\usepackage{bm}
+
+
+\pagestyle{fancy}
+\fancyhf{} % clear all header and footer fields
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.375in}
+\addtolength{\evensidemargin}{-0.375in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1.0in}
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Sections formatting
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+%-------------------------
+% Custom commands
+\newcommand{\resumeItem}[2]{
+  \item\small{
+    \textbf{#1}{ #2 \vspace{-2pt}}
+  }
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-1pt}\item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-5pt}
+}
+
+\newcommand{\resumeSubItem}[2]{\resumeItem{#1}{#2}\vspace{-4pt}}
+
+\renewcommand{\labelitemii}{$\circ$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=*]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+%-------------------------------------------
+%%%%%%  CV STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{document}
+
+%----------HEADING-----------------
+\begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
+  \textbf{\Large Wern Juin Gabriel Ong} & \\
+  \href{mailto:wgabrielong@uni-bonn.de}{wgabrielong@uni-bonn.de}
+  &  \\
+\end{tabular*}
+%-----------EDUCATION-----------------
+\section{Education}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {Rheinische Friedrich-Wilhelms-Universität Bonn}{Bonn, Germany}
+      {M.S. Mathematics}{October 2024 - Exp. August 2026}
+    \resumeSubheading
+      {Bowdoin College}{Brunswick, ME}
+      {B.A. Mathematics \& Minor in Classical Greek (Leave 2020-21)}{August 2019 - May 2024}
+    \resumeSubheading
+      {Harvard University}{Cambridge, MA}
+      {Visiting Student}{September 2023 -- December 2023}
+    \resumeSubheading
+      {Columbia University in the City of New York}{New York City, NY}
+      {Visiting Student}{August 2020 - June 2021}
+    \resumeSubheading
+      {Mont' Kiara International School}{Kuala Lumpur, Malaysia}
+      {High School Diploma \& IB Diploma}{August 2017 - May 2019}
+  \resumeSubHeadingListEnd
+%-----------EXPERIENCE-----------------
+\section{Experience}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {Nonlinear Algebra -- Max Planck Institute for Mathematics in the Sciences}{Leipzig, Germany}
+      {Visiting Researcher (Mentor: P. Breiding)}{May 2022 - August 2022}
+      \resumeSubheading
+      {The Xena Project -- Imperial College London}{London, United Kingdom}
+      {Independent Contributor}{June 2021 - August 2021}
+    \resumeSubheading
+      {Karanicolas Lab -- Fox Chase Cancer Center \& Temple Medical School}{Philadelphia, PA}
+      {Researcher (Mentor: J. Karanicolas)}{May 2020 - June 2021}
+    \resumeSubHeadingListEnd
+%-------PUBLICATIONS------------------
+\section{Research in Mathematics}
+\scriptsize{As is \href{https://www.ams.org/profession/leaders/culture/JointResearchandItsPublicationfinal.pdf}{convention in mathematics}, authors are ordered alphabetically by last name.}\normalsize
+\begin{itemize}[leftmargin=*]
+ \item S. Atherton, S. Dutta, J. Lopez Garcia, J. Louwsma, Y. Luo, \textbf{W. Ong}, R. Sagarayaj ``Transfers and Unstable Degrees in the $\mathbb{A}^{1}$-Brouwer Degrees Package for \texttt{Macaulay2}.'' [\href{https://arxiv.org/abs/2511.12765}{\texttt{arXiv}}]
+ \item S. McKean, G. Muratore, \textbf{W. Ong}. ``Quadratic Counts of Lines Highly Tangent to Hypersurfaces.'' \emph{Math. Nachrichten, Vol. 298, No. 11.}  [\href{https://arxiv.org/abs/2504.21664}{\texttt{arXiv}}][\href{https://doi.org/10.1002/mana.70048}{Journal}]
+ \item N. Borisov, T. Brazelton, F. Espino, T. Hagedorn, Z. Han, J. Lopez Garcia, J. Louwsma, \textbf{W. Ong}, A. Tawfeek. ``$\mathbb{A}^{1}$-Brouwer Degrees in \texttt{Macaulay2}.'' \emph{J. Software for Algebra and Geometry, Vol. 14, No. 1}. [\href{https://arxiv.org/abs/2312.00106}{\texttt{arXiv}}][\href{https://doi.org/10.2140/jsag.2024.14.175}{Journal}]
+ \item P. Breiding, J. Lindberg, \textbf{W. Ong}, L. Sommer. ``Real Circles Tangent to 3 Conics." \emph{Le Matematiche, Vol. 78, No. 1.} [\href{https://doi.org/10.48550/arXiv.2211.06876}{\texttt{arXiv}}][\href{https://lematematiche.dmi.unict.it/index.php/lematematiche/article/view/2450}{Journal}]
+\end{itemize}
+\section{Research in Computational Biology}
+\scriptsize{Authors are ordered by contribution. $^{\dagger}$ Indicates equal contribution.}\normalsize
+\begin{itemize}[leftmargin=*]
+    \item G. Andrianov, \textbf{W. Ong}, I. Serebriiskii, and J. Karanicolas. ``Efficient Hit-to-Lead Searching of Kinase Inhibitor Chemical Space via Computational Fragment Merging." \emph{J. Chemical Information and Modeling, Vol. 61, No. 12}. [\texttt{\href{https://doi.org/10.1021/acs.jcim.1c00630}{Journal}}] [\texttt{\href{https://doi.org/10.1101/2021.06.01.446684}{bioRxiv}}]
+  \item \textbf{W. Ong}$^{\dagger}$, P. Kirubakaran$^{\dagger}$, J. Karanicolas. ``How Current Neural Network Models for Kinase-Inhibitor Affinity Predictions Generalize Poorly." [\texttt{\href{https://doi.org/10.1101/2023.09.04.556234}{bioRxiv}}]
+\end{itemize}
+\section{Expository Writing}
+\scriptsize{I am also author of the following lecture notes which have become somewhat popular.}\normalsize{}
+\begin{itemize}[leftmargin=*]
+ \item \href{https://wgabrielong.github.io/Bonn-Summer-25/V5A4-Habiro-Cohomology/Habiro_Cohomology_Notes.pdf}{V5A4 - Habiro Cohomology} - Summer 2025 Course by Prof. Dr. P. Scholze at the University of Bonn
+\end{itemize}
+%-------PRESENTATIONS------------------
+\section{Selected Presentations}
+\scriptsize{A full list of presentations is available at \href{https://wgabrielong.github.io/talks/}{\texttt{wgabrielong.github.io/talks}}.}\normalsize{}
+\begin{itemize}[leftmargin=*]
+  \item ``Arithmetic Counts of Highly Tangent Lines'' \texttt{Macaulay2} Workshop, Madison, Wisconsin, July 2025
+  \item ``The Arc Topology'' ARGOS Seminar on `Berkovich Motives' and `Geometrization of Local Langlands, Motivically', Bonn, Germany, Winter 24/25
+  \item ``$\mathbb{A}^{1}$-Brouwer Degrees in \texttt{Macaulay2}'' Effective Methods in Algebraic Geometry (MEGA), Leipzig, Germany, July 2024
+\end{itemize}
+
+%-----------------AWARDS AND PRIZES----------------------
+ \section{Selected Awards and Honors}
+\resumeSubHeadingListStart
+\resumeSubItem{E. S. Hammond Mathematics Prize (2024):}{ Completion of the mathematics major with distinction.}
+\resumeSubItem{Sarah and James Bowdoin Scholar (2022):}{(Dean's List) For exceptional overall academic performance.}
+\resumeSubItem{Smyth Mathematics Prize (2022):}{For most exceptional performance in mathematics coursework in the first two years of study.}
+\resumeSubItem{$\bm{100\pi-\varepsilon}$ Prize (2020):}{For extraordinary inspiration and joy for the pursuit of mathematics.}
+\resumeSubHeadingListEnd
+  \section{Service to the Profession}
+\resumeSubHeadingListStart
+ \resumeSubItem{Twoples (2025-Present)}{Mentor to students from underrepresented groups, non-traditional backgrounds, and/or non-research oriented institutions in semester-long mathematical reading projects.}
+ \resumeSubItem{Kleine AT: Even Filtration via Spectral Sequences (2025)}{Co-founder of conference series and co-organizer of inaugural edition at MPIM Bonn with T. Barthel and D. Bowman.}
+ \resumeSubItem{\texttt{Macaulay2} Workshop at U. Wisconsin - Madison (2025)}{Project co-leader with S. Pauli on unstable $\mathbb{A}^{1}$-Brouwer degrees.}
+ \resumeSubItem{Bowdoin Science Experience (Fall 2021 \& 2022):}{Organized an orientation trip introducing students historically underrepresented in the sciences to the Bowdoin science departments and other academic support services.}
+\resumeSubItem{Mathematics Department Tenure-Track Faculty Search (Spring 2020 \& 2024):}{Assisted in small-group student interviews for the tenure-track faculty searches.}
+\resumeSubItem{Mathematics Department Visiting Faculty Search (Summer 2020 \& 2023):}{Assisted in small-group student interviews for the visiting assistant professor searches.}
+ \resumeSubItem{Bowdoin College Alumni Interviewer (2024, 2025)}{Conduct evaluative interviews of prospective applicants to Bowdoin College.}
+\resumeSubHeadingListEnd
+ %--------PROGRAMMING SKILLS------------
+\section{Skills}
+ \resumeSubHeadingListStart
+ \resumeSubItem{Programming: }{Python (TensorFlow, SKLearn, Pandas, NumPy); Julia; Wolfram Mathematica; Lean}
+ \resumeSubItem{Computational Skills: }{Google Suite, Microsoft Office, \LaTeX}
+ \resumeSubItem{Languages:}{English (Native), Classical Greek (Scholarly), Spanish (Working), Mandarin (Spoken), Malay (Spoken)}
+ \resumeSubItem{Certificates and Training:}{WMA Wilderness First Responder, PADI Master SCUBA Diver}
+ \resumeSubHeadingListEnd
+
+\end{document}

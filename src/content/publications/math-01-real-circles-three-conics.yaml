@@ -1,0 +1,11 @@
+title: 'Real Circles Tangent to Three Conics'
+venue: 'Le Matematiche, Vol. 78, No. 1'
+status: published
+byline: 'with Paul Breiding, Julia Lindberg, and Linus Sommer'
+abstract: >-
+  In this paper we study circles tangent to conics. We show there are generically 184 complex circles tangent to three conics in the plane and we characterize the real discriminant of the corresponding polynomial system. We give an explicit example of 3 conics with 136 real circles tangent to them. We conjecture that 136 is the maximal number of real circles. Furthermore, we implement a hill-climbing algorithm to find instances of conics with many real circles, and we introduce a machine learning model that, given three real conics, predicts the number of circles tangent to these three conics.
+links:
+  - label: Journal
+    url: 'https://lematematiche.dmi.unict.it/index.php/lematematiche/article/view/2450'
+  - label: arXiv
+    url: 'https://doi.org/10.48550/arXiv.2211.06876'

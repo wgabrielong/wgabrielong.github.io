@@ -1,0 +1,203 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { renderInlineMath } from '../../utils/math';
+
+// Sort newest term first. Terms look like "Winter 2025/26", "Summer 2025".
+// Rank by the first 4-digit year, then by season (Spring < Summer < Fall <
+// Winter, where Winter YYYY/YY starts in YYYY). Undated notes (e.g. standalone
+// primers) sort to the bottom.
+const seasonRank: Record<string, number> = {
+  Winter: 4,
+  Fall: 3,
+  Summer: 2,
+  Spring: 1,
+};
+
+function termKey(term?: string): number {
+  if (!term) return -1;
+  const season = term.split(' ')[0];
+  const year = Number(term.match(/\d{4}/)?.[0] ?? 0);
+  return year * 10 + (seasonRank[season] ?? 0);
+}
+
+const notes = await getCollection('notes');
+
+const byTerm = (a: (typeof notes)[number], b: (typeof notes)[number]) =>
+  termKey(b.data.term) - termKey(a.data.term);
+
+// Two subsections. Course notes are explicit; everything else (standalone
+// primers, unsectioned) falls into Miscellany. Within each, newest term first.
+const grouped = [
+  { label: 'Course Notes', notes: notes.filter((n) => n.data.section === 'course').sort(byTerm) },
+  { label: 'Miscellany', notes: notes.filter((n) => n.data.section !== 'course').sort(byTerm) },
+].filter((g) => g.notes.length > 0);
+---
+
+<BaseLayout
+  title="Notes"
+  description="Lecture and seminar notes typeset by Wern Juin Gabriel Ong."
+>
+  <h1>Notes</h1>
+  <p class="intro">
+    I have found it helpful to write up notes from courses, conferences, and for
+    mathematics I am learning on my own. Some documents, especially class notes,
+    are incomplete, as the LaTeX document is transcribed after the fact. Use at
+    your own peril.
+  </p>
+
+  {
+    grouped.map((section) => (
+      <section class="note-section">
+        <h2 class="section-heading">{section.label}</h2>
+        <ul class="note-list">
+          {section.notes.map((note) => (
+            <li class="note">
+              <h3 class="note-title">
+                {note.data.courseCode && (
+                  <span class="course-code">{note.data.courseCode}</span>
+                )}
+                <span class="note-name">{note.data.title}</span>
+              </h3>
+
+              {(note.data.instructor || note.data.institution) && (
+                <p class="note-meta">
+                  {note.data.instructor && <span>{note.data.instructor}</span>}
+                  {note.data.institution && <span>{note.data.institution}</span>}
+                </p>
+              )}
+
+              {note.data.description && (
+                <p
+                  class="note-description"
+                  set:html={renderInlineMath(note.data.description)}
+                />
+              )}
+
+              <p class="note-sub">
+                {note.data.term && <span class="note-term">{note.data.term}</span>}
+                {note.data.status === 'incomplete' && (
+                  <span class="note-status">In progress</span>
+                )}
+                <a href={note.data.pdfPath} target="_blank" rel="noopener noreferrer">
+                  PDF
+                </a>
+              </p>
+            </li>
+          ))}
+        </ul>
+      </section>
+    ))
+  }
+</BaseLayout>
+
+<style>
+  h1 {
+    margin-bottom: 0.5rem;
+  }
+
+  .intro {
+    margin: 0 0 2.5rem;
+    color: var(--color-muted);
+    max-width: 40rem;
+  }
+
+  .note-section {
+    margin-top: 2.75rem;
+  }
+
+  .note-section:first-of-type {
+    margin-top: 0;
+  }
+
+  .section-heading {
+    margin: 0 0 1.1rem;
+    padding-bottom: 0.5rem;
+    font-size: 1.3rem;
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .note-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .note {
+    padding: 1.35rem 0;
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .note:first-child {
+    padding-top: 0;
+  }
+
+  .note:last-child {
+    border-bottom: none;
+  }
+
+  .note-title {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 0.5rem;
+    font-size: 1.08rem;
+    font-weight: 600;
+    line-height: 1.4;
+    margin: 0 0 0.4rem;
+  }
+
+  .course-code {
+    font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, 'Liberation Mono',
+      monospace;
+    font-size: 0.78rem;
+    font-weight: 500;
+    color: var(--color-accent);
+    padding: 0.1rem 0.4rem;
+    border: 1px solid rgba(0, 69, 142, 0.3);
+    border-radius: 4px;
+    background: rgba(0, 69, 142, 0.05);
+  }
+
+  .note-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.35rem 0.9rem;
+    margin: 0 0 0.4rem;
+    font-size: 0.92rem;
+    color: var(--color-body);
+  }
+
+  .note-description {
+    margin: 0 0 0.5rem;
+    font-size: 0.95rem;
+    color: var(--color-body);
+    max-width: 40rem;
+  }
+
+  .note-sub {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.5rem 0.9rem;
+    margin: 0;
+    font-size: 0.88rem;
+  }
+
+  .note-term {
+    color: var(--color-muted);
+  }
+
+  .note-status {
+    font-size: 0.76rem;
+    font-weight: 500;
+    color: var(--color-muted);
+    padding: 0.1rem 0.5rem;
+    border: 1px solid var(--color-border);
+    border-radius: 999px;
+  }
+
+  .note-sub a {
+    font-weight: 500;
+  }
+</style>

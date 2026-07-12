@@ -1,0 +1,60 @@
+name: Build
+
+# Proof-of-build only: compiles the CV with Tectonic and builds the Astro
+# site end to end, uploading dist/ as an artifact. Intentionally does NOT
+# deploy to Pages yet — the Pages source still points at the old branch.
+
+on:
+  push:
+    branches: [rebuild]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      # Tectonic caches its downloaded package/format bundle under
+      # ~/.cache/Tectonic. Key on the CV sources so a .tex change (which may
+      # pull new packages) invalidates the cache; older caches still restore.
+      - name: Cache Tectonic bundle
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/Tectonic
+          key: tectonic-${{ runner.os }}-${{ hashFiles('cv-src/**/*.tex') }}
+          restore-keys: |
+            tectonic-${{ runner.os }}-
+
+      - name: Set up Tectonic
+        uses: wtfjoke/setup-tectonic@v4
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+
+      # Compile the CV and place the PDF where Astro serves it, so the built
+      # site's /cv/main.pdf link resolves.
+      - name: Compile CV
+        run: |
+          mkdir -p public/cv
+          tectonic --outdir public/cv cv-src/main.tex
+          ls -la public/cv
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build site
+        run: npm run build
+
+      - name: Upload built site
+        uses: actions/upload-artifact@v4
+        with:
+          name: dist
+          path: dist/
+          if-no-files-found: error

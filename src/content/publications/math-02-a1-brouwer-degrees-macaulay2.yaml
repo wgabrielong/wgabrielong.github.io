@@ -1,0 +1,12 @@
+title: '$\mathbb{A}^{1}$-Brouwer Degrees in Macaulay2'
+titlePlain: '𝔸¹-Brouwer Degrees in Macaulay2'
+venue: 'Journal of Software for Algebra and Geometry, Vol. 14, No. 1'
+status: published
+byline: 'with Nikita Borisov, Thomas Brazelton, Frenly Espino, Thomas Hagedorn, Zhaobo Han, Jordy Lopez Garcia, Joel Louwsma, and Andrew Tawfeek'
+abstract: >- 
+  We describe the Macaulay2 package "A1BrouwerDegrees" for computing local and global $\mathbb{A}^{1}$-Brouwer degrees and studying symmetric bilinear forms over the complex numbers, the real numbers, the rational numbers, and finite fields of characteristic not equal to 2.
+links:
+  - label: Journal
+    url: 'https://msp.org/jsag/2024/14-1/p15.xhtml'
+  - label: arXiv
+    url: 'https://doi.org/10.48550/arXiv.2312.00106'

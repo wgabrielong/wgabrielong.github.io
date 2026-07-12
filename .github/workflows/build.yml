@@ -6,7 +6,7 @@ name: Build
 
 on:
   push:
-    branches: [rebuild]
+    branches: [main]
   workflow_dispatch:
 
 jobs:

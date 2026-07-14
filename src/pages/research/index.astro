@@ -63,16 +63,16 @@ const grouped = sections
             <p class="pub-description" set:html={renderInlineMath(pub.data.description)} />
           )}
 
-          {(pub.data.links.length > 0 || pub.data.pdfPath) && (
+          {(pub.data.links.length > 0 || pub.data.pdf) && (
             <p class="pub-links">
-              {pub.data.pdfPath && (
-                <a href={pub.data.pdfPath}>PDF</a>
-              )}
               {pub.data.links.map((link) => (
                 <a href={link.url} target="_blank" rel="noopener noreferrer">
                   {link.label}
                 </a>
               ))}
+              {pub.data.pdf && (
+                <a href={pub.data.pdf} target="_blank" rel="noopener noreferrer">PDF</a>
+              )}
             </p>
           )}
 

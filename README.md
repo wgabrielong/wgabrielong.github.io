@@ -113,7 +113,7 @@ links:                       # optional; external URLs only (validated)
     url: 'https://doi.org/10.2140/jsag.2024.14.175'
   - label: arXiv
     url: 'https://doi.org/10.48550/arXiv.2312.00106'
-pdfPath: '/files/....pdf'    # optional
+pdf: 'https://wgabrielong.github.io/academic-writing/papers/.../main.pdf'  # optional
 ```
 
 Field conventions:
@@ -130,6 +130,9 @@ Field conventions:
   dropdown; `description` is a shorter blurb shown inline (used for the software
   entry). Both optional.
 - **`links[].url`** must be an absolute URL (Zod `.url()`), unlike talks.
+- **`pdf`** — optional full URL to the typeset PDF on the academic-writing site
+  (e.g. `…/academic-writing/papers/<slug>/main.pdf`); renders as a "PDF" link
+  after the arXiv/Journal links. (Notes use the same `pdf` field.)
 
 ### A note — `src/content/notes/<slug>.yaml`
 
@@ -147,13 +150,12 @@ instructor: 'Prof. Jens Franke'    # optional
 institution: 'University of Bonn'  # optional
 term: 'Summer 2025'                # optional
 status: complete                   # optional; complete | incomplete
-pdfPath: 'https://wgabrielong.github.io/academic-writing/notes/bonn-summer-25/V5A2-Rigid-Analytic-Geometry/Rigid_Analytic_Geometry_Notes.pdf'
+pdf: 'https://wgabrielong.github.io/academic-writing/notes/bonn-summer-25/V5A2-Rigid-Analytic-Geometry/Rigid_Analytic_Geometry_Notes.pdf'
 ```
 
-- `pdfPath` is the **full URL** to the compiled PDF on the academic-writing
-  site.
-- Only `title` and `pdfPath` are required, so a standalone primer can be just
-  those two plus `section: miscellany`.
+- `pdf` is the **full URL** to the compiled PDF on the academic-writing site.
+- Only `title` and `pdf` are required, so a standalone primer can be just those
+  two plus `section: miscellany`.
 - `status: incomplete` renders an "In progress" tag.
 
 ### A talk — `src/content/talks/talk-<nn>-<slug>.yaml`

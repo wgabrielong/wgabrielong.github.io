@@ -27,7 +27,9 @@ const publications = defineCollection({
         }),
       )
       .default([]),
-    pdfPath: z.string().optional(),
+    // Link to the typeset PDF on the academic-writing site; renders as a
+    // "PDF" link on the Research page.
+    pdf: z.string().url().optional(),
   }),
 });
 
@@ -69,7 +71,7 @@ const notes = defineCollection({
     term: z.string().optional(), // e.g. "Winter 2025/26"
     status: z.enum(['complete', 'incomplete']).optional(),
     // Full URL to the compiled PDF on the academic-writing site.
-    pdfPath: z.string(),
+    pdf: z.string(),
   }),
 });
 

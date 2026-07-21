@@ -1,0 +1,9 @@
+title: 'MotivicHomotopy'
+venue: 'Julia'
+status: 
+byline: 
+description: >-
+  A port of the Macaulay2 package A1BrouwerDegrees into Julia.
+links:
+  - label: Documentation
+    url: 'https://juliamotivichomotopy.github.io/MotivicHomotopy.jl/dev/'

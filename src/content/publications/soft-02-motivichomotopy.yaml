@@ -1,7 +1,5 @@
-title: 'MotivicHomotopy'
+title: 'MotivicHomotopy.jl'
 venue: 'Julia'
-status: 
-byline: 
 description: >-
   A port of the Macaulay2 package A1BrouwerDegrees into Julia.
 links:

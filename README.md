@@ -100,8 +100,8 @@ Research page and the number sets order *within* it:
 title: '$\mathbb{A}^{1}$-Brouwer Degrees in Macaulay2'
 titlePlain: '𝔸¹-Brouwer Degrees in Macaulay2'   # only when title has $…$ math
 venue: 'Journal of Software for Algebra and Geometry, Vol. 14, No. 1'  # optional
-status: published            # published | preprint | in prep
-byline: 'with Nikita Borisov, Thomas Brazelton, and Andrew Tawfeek'
+status: published            # optional; published | preprint | in prep
+byline: 'with Nikita Borisov, Thomas Brazelton, and Andrew Tawfeek'  # omit if solo
 description: >-              # optional: short, always-visible blurb (software)
   A one- or two-sentence inline description.
 abstract: >-                # optional: hidden behind an "Abstract" dropdown
@@ -122,13 +122,16 @@ Field conventions:
 - **`titlePlain`** — *only* when `title` contains math. A markup-free version
   used for the HTML `title` tooltip / metadata / screen readers (use Unicode,
   e.g. `𝔸¹`). Plain-math-free titles don't need it.
-- **`byline`** — defaults to `Wern Juin Gabriel Ong` (see the schema default).
-  For co-authored work, override with the **`with A, B, and C`** convention
-  (Gabriel implied as an author; list collaborators alphabetically by surname,
-  matching how they're credited elsewhere).
+- **`byline`** — only for co-authored work, using the **`with A, B, and C`**
+  convention (Gabriel implied as an author; list collaborators alphabetically by
+  surname, matching how they're credited elsewhere). **Omit it for solo work** —
+  no byline line is rendered at all.
 - **`abstract`** vs **`description`** — `abstract` sits behind a `<details>`
   dropdown; `description` is a shorter blurb shown inline (used for the software
   entry). Both optional.
+- **`status`** — optional, and **not rendered** anywhere (the status pills were
+  removed). Omit it for software / unpublished entries rather than asserting a
+  misleading `published`.
 - **`links[].url`** must be an absolute URL (Zod `.url()`), unlike talks.
 - **`pdf`** — optional full URL to the typeset PDF on the academic-writing site
   (e.g. `…/academic-writing/papers/<slug>/main.pdf`); renders as a "PDF" link

@@ -51,7 +51,7 @@ const grouped = sections
                 set:html={renderInlineMath(pub.data.title)}
               />
 
-          <p class="pub-byline">{pub.data.byline}</p>
+          {pub.data.byline && <p class="pub-byline">{pub.data.byline}</p>}
 
           {pub.data.venue && (
             <p class:list={['pub-venue', { mono: section.key === 'soft' }]}>

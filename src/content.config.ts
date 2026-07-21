@@ -11,10 +11,13 @@ const publications = defineCollection({
     titlePlain: z.string().optional(),
     // Optional: preprints / in-prep work may not have a venue yet.
     venue: z.string().optional(),
-    status: z.enum(['published', 'preprint', 'in prep']),
-    // Author credit line. Defaults to the full name for solo work;
-    // override per entry (e.g. "with A, B, and C").
-    byline: z.string().default('Wern Juin Gabriel Ong'),
+    // Not rendered on the page (status pills were removed); optional so
+    // software / unpublished entries can omit it rather than assert a
+    // misleading "published".
+    status: z.enum(['published', 'preprint', 'in prep']).optional(),
+    // Author credit line for coauthored work (e.g. "with A, B, and C").
+    // Omit for solo work — no byline line is rendered at all.
+    byline: z.string().optional(),
     // Short, always-visible blurb (1–2 sentences). Used for software entries;
     // shown inline, unlike `abstract` which sits behind a dropdown.
     description: z.string().optional(),

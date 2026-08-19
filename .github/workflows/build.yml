@@ -43,11 +43,21 @@ jobs:
           github-token: ${{ secrets.GITHUB_TOKEN }}
 
       # Compile the CV and place the PDF where Astro serves it, so the built
-      # site's /cv/main.pdf link resolves.
+      # site's /cv/main.pdf link resolves. Tectonic's package bundle CDN
+      # occasionally 429s on cold-cache fetches, so retry with backoff.
       - name: Compile CV
         run: |
           mkdir -p public/cv
-          tectonic --outdir public/cv cv-src/main.tex
+          for attempt in 1 2 3 4 5; do
+            if tectonic --outdir public/cv cv-src/main.tex; then
+              break
+            fi
+            if [ "$attempt" -eq 5 ]; then
+              echo "Tectonic failed after 5 attempts" >&2
+              exit 1
+            fi
+            sleep $((attempt * 15))
+          done
           ls -la public/cv
 
       - name: Set up Node

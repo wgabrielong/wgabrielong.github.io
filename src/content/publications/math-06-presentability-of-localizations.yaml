@@ -5,5 +5,7 @@ byline: 'with Gabriel Ribeiro'
 abstract: >-
   We prove that certain categories of Bousfield localizations are presentable and give explicit regular cardinals $\kappa$ for which they are $\kappa$-presentable. As an application, we show that the category of analytic rings in the sense of Clausen and Scholze is $(2^{\aleph_{0}})^{+}$-presentable. 
 pdf: "https://wgabrielong.github.io/academic-writing/papers/presentability-of-localizations/main.pdf"
-
+links:
+  - label: arXiv
+    url: 'https://doi.org/10.48550/arXiv.2610.22494'
   

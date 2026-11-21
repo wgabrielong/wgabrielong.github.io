@@ -5,6 +5,14 @@
 # day before month, no year — the term heading carries the year).
 # Pre-2022 and both Spring 2022 entries are "(Virtual)" (attended remotely).
 
+- id: spring-2027
+  term: "Spring 2027"
+  entries:
+    - dateRange: "February to April"
+      title: "Stable Homotopy Theory and Arithmetic Geometry"
+      institution: "Center of Mathematical Sciences and Applications -- Harvard University"
+      location: "Cambridge, MA, USA"
+
 - id: fall-2026
   term: "Fall 2026"
   entries:

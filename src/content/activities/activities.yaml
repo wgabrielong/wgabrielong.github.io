@@ -8,9 +8,9 @@
 - id: spring-2027
   term: "Spring 2027"
   entries:
-    - dateRange: "February to April"
+    - dateRange: "February-April"
       title: "Stable Homotopy Theory and Arithmetic Geometry"
-      institution: "Center of Mathematical Sciences and Applications -- Harvard University"
+      institution: "Center of Mathematical Sciences and Applications - Harvard University"
       location: "Cambridge, MA, USA"
 
 - id: fall-2026
